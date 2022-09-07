@@ -12,8 +12,6 @@ const [numbers, setNumbers] = useState([])
 const handleShowNumber = (value) => {
   setNumbers([...numbers, value])
 }
-
-
   return (
     <div className="calculatorContainer">
       <Screen items={props.items} numbers={numbers}/>
