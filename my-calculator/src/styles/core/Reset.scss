@@ -1,3 +1,8 @@
-.App {
-  max-width: 1200px;
+.App{
+    max-width: 1200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:auto ;
 }
