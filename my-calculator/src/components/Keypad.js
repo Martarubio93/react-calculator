@@ -1,23 +1,26 @@
 import '../styles/layout/Keypad.scss';
+import OperatorsContext from './OperatorsContext';
+import React from 'react';
 
 
 
 
 const Keypad = (props) => {
+    const items = React.useContext(OperatorsContext)
 
     const handleNumber = (ev) => {
-        console.log(props.handleShowNumber(ev.currentTarget.value))
-       
-        
+        props.handleShowNumber(ev.currentTarget.value)
+           
     };
 
     return (
    <div className="numbersContainer">
-       { props.items.map((item) => {
+       { items.map((item) => {
             return (
                 <input
                 className="numbersContainer__number"
                 type="button"
+                key={item}
                 value={item}
                 onClick={handleNumber}
                 />

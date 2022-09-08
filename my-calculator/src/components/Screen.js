@@ -1,10 +1,12 @@
 import '../styles/layout/Screen.scss'
-const Screen = (props) => {
-    return <div className="screen">
-        <div>
-            {props.numbers}
-        </div>
+import React from 'react';
+import OperatorsContext from './OperatorsContext';
 
+const Screen = (props) => {
+const items = React.useContext(OperatorsContext)
+
+    return <div className="screen">
+            {props.numbers}
     </div>
 }
 

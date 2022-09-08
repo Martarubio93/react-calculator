@@ -1,21 +1,20 @@
+import React from 'react';
 //styles
 import '../styles/layout/Calculator.scss'
 //Components
 import Screen from "./Screen";
 import Keypad from "./Keypad";
-import { useState } from 'react';
+import ResetBtn from './ResetBtn';
 
 
-const Calculator = (props) => {
-const [numbers, setNumbers] = useState([])
 
-const handleShowNumber = (value) => {
-  setNumbers([...numbers, value])
-}
+const Calculator = () => {
+
   return (
     <div className="calculatorContainer">
-      <Screen items={props.items} numbers={numbers}/>
-      <Keypad  items={props.items} numbers={numbers} handleShowNumber={handleShowNumber}/>
+      <Screen />
+      <Keypad/>
+      <ResetBtn/>
     </div>
   );
 };
