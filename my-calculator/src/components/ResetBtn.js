@@ -1,11 +1,15 @@
-const ResetBtn = (props) => {
+import OperatorsContext from './OperatorsContext';
+import { useContext } from 'react';
+
+
+
+const ResetBtn = () => {
+    const {setNumbers} = useContext(OperatorsContext)
    const handleReset = () => {
-     props.setNumbers([])
+     setNumbers([])
     }
 
-
     return (
-
         <input
         type="reset"
         onClick={handleReset}

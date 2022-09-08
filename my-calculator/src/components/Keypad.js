@@ -5,11 +5,11 @@ import React from 'react';
 
 
 
-const Keypad = (props) => {
-    const items = React.useContext(OperatorsContext)
+const Keypad = () => {
+    const {items, handleShowNumber} = React.useContext(OperatorsContext)
 
     const handleNumber = (ev) => {
-        props.handleShowNumber(ev.currentTarget.value)
+        handleShowNumber(ev.currentTarget.value)
            
     };
 

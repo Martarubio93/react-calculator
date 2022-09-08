@@ -1,12 +1,12 @@
 import '../styles/layout/Screen.scss'
 import React from 'react';
 import OperatorsContext from './OperatorsContext';
+import { useContext } from 'react';
 
-const Screen = (props) => {
-const items = React.useContext(OperatorsContext)
-
+const Screen = () => {
+const {numbers}  = useContext(OperatorsContext)
     return <div className="screen">
-            {props.numbers}
+            {numbers}
     </div>
 }
 

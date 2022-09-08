@@ -12,7 +12,7 @@ const Calculator = () => {
 
   return (
     <div className="calculatorContainer">
-      <Screen />
+      <Screen/>
       <Keypad/>
       <ResetBtn/>
     </div>
