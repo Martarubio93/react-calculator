@@ -7,7 +7,8 @@ import OperatorsContext from "./OperatorsContext";
 import { useState } from "react";
 
 const Main = () => {
-  const items = [1, 2, 3, "+", 4, 5, 6, "-", 7, 8, 9, "*", ".", 0, "/", "="];
+  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  const operators = ["+", "-", "*", ".", "/", "="];
   const [numbers, setNumbers] = useState([]);
 
   const handleShowNumber = (value) => {
@@ -16,7 +17,7 @@ const Main = () => {
 
   return (
     <OperatorsContext.Provider
-      value={{ items, numbers, setNumbers, handleShowNumber }}>
+      value={{ items, numbers, operators, setNumbers, handleShowNumber }}>
       <Calculator />
     </OperatorsContext.Provider>
   );

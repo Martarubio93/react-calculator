@@ -4,10 +4,13 @@ import OperatorsContext from './OperatorsContext';
 import { useContext } from 'react';
 
 const Screen = () => {
-const {numbers}  = useContext(OperatorsContext)
-    return <div className="screen">
+const {numbers, operators}  = useContext(OperatorsContext)
+    return <>
+    <div className="screenNumbers">
             {numbers}
     </div>
+    <div className='screenOperatos'>{operators}</div>
+    </> 
 }
 
 
