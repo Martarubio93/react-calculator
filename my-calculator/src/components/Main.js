@@ -11,30 +11,39 @@ const Main = () => {
   const operators = ["+", "-", "*", ".", "/", "="];
   const [displayNumbers, setDisplayNumbers] = useState([]);
   const [displayOperator, setDisplayOperator] = useState([]);
-  const [number1, setNumber1] =useState();
+  const [number1, setNumber1] = useState();
   const [number2, setNumber2] = useState();
   const [total, setTotal] = useState();
-
-
 
   const handleDisplayNumber = (value) => {
     setDisplayNumbers([...displayNumbers, value]);
   };
   const handleDisplayOperator = (value) => {
-    setDisplayOperator([...displayOperator,value])
-  }
+    setDisplayOperator([...displayOperator, value]);
+  };
 
-
-
-
-
-
-  return (<>
-
-    <OperatorsContext.Provider
-      value={{ numbers, displayNumbers, displayOperator, operators, setDisplayNumbers, setDisplayOperator, handleDisplayNumber, handleDisplayOperator, number1, setNumber1, number2, setNumber2, total, setTotal}}>
-      <Calculator />
-    </OperatorsContext.Provider>
+  return (
+    <>
+      <OperatorsContext.Provider
+        value={{
+          numbers,
+          displayNumbers,
+          displayOperator,
+          operators,
+          setDisplayNumbers,
+          setDisplayOperator,
+          handleDisplayNumber,
+          handleDisplayOperator,
+          number1,
+          setNumber1,
+          number2,
+          setNumber2,
+          total,
+          setTotal,
+        }}
+      >
+        <Calculator />
+      </OperatorsContext.Provider>
     </>
   );
 };
