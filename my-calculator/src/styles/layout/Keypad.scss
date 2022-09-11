@@ -1,15 +1,17 @@
-.numbersContainer {
+.container {
     margin: 22px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 6px;
 
-    &__number {
+    &__btn {
         font-size: 20px;
+        width: 12px;
         padding: 25px;
         background-color: white;
         border: none;
 
 
     }
+
 }

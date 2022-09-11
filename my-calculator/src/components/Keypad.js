@@ -1,34 +1,54 @@
-import '../styles/layout/Keypad.scss';
-import OperatorsContext from './OperatorsContext';
-import React from 'react';
-
-
-
+import "../styles/layout/Keypad.scss";
+import OperatorsContext from "./OperatorsContext";
+import ButtonNumbers from "./ButtonNumbers";
+import React from "react";
 
 const Keypad = () => {
-    const {items, handleShowNumber} = React.useContext(OperatorsContext)
+  const {
+    numbers,
+    operators,
+    handleDisplayOperator,
+    displayOperator,
+    number1,
+    number2,
+    setTotal,
+  } = React.useContext(OperatorsContext);
 
-    const handleNumber = (ev) => {
-        handleShowNumber(ev.currentTarget.value)
-           
-    };
+  const add = () => {
+    setTotal(number1 + number2);
+  };
 
-    return (
-   <div className="numbersContainer">
-       { items.map((item) => {
-            return (
-                <input
-                className="numbersContainer__number"
-                type="button"
-                key={item}
-                value={item}
-                onClick={handleNumber}
-                />
-            )
-        })}
-   </div>
-    )
- 
-}
+  const handleOperator = (ev) => {
+    handleDisplayOperator(ev.currentTarget.value);
+    checkOperator();
+  };
 
-export default Keypad
+  const checkOperator = () => {
+    displayOperator.forEach((item) => {
+      if (item === "=") {
+        add();
+      }
+    
+    });
+  };
+
+  return (
+    <div className="container">
+      {numbers.map((num, index) => {
+        return <ButtonNumbers key={index} num={num} />;
+      })}
+      {operators.map((oper) => {
+        return (
+          <input
+            className="container__btn"
+            key={oper}
+            value={oper}
+            onClick={handleOperator}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+export default Keypad;

@@ -4,9 +4,10 @@ import { useContext } from 'react';
 
 
 const ResetBtn = () => {
-    const {setNumbers} = useContext(OperatorsContext)
+    const {setDisplayNumbers, setDisplayOperator} = useContext(OperatorsContext)
    const handleReset = () => {
-     setNumbers([])
+     setDisplayNumbers([])
+     setDisplayOperator([])
     }
 
     return (
