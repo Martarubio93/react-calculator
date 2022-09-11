@@ -11,8 +11,8 @@ const Screen = () => {
         className="screenNumbers"
       >
                  <div>
-      <input type="number" placeholder="0" value={number1} onChange={e => setNumber1(+e.target.value)}/>
-      <input type="number" placeholder="0" value={number2} onChange={e => setNumber2(+e.target.value)}/>
+      <input type="number" value={number1} onChange={e => setNumber1(+e.target.value)}/>
+      <input type="number" value={number2} onChange={e => setNumber2(+e.target.value)}/>
     </div>
         {displayNumbers}
       </div>

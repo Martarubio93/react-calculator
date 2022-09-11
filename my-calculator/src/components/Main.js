@@ -11,9 +11,9 @@ const Main = () => {
   const operators = ["+", "-", "*", ".", "/", "="];
   const [displayNumbers, setDisplayNumbers] = useState([]);
   const [displayOperator, setDisplayOperator] = useState([]);
-  const [number1, setNumber1] =useState(0);
-  const [number2, setNumber2] = useState(0);
-  const [total, setTotal] = useState(number1 + number2);
+  const [number1, setNumber1] =useState();
+  const [number2, setNumber2] = useState();
+  const [total, setTotal] = useState();
 
 
 
@@ -26,10 +26,6 @@ const Main = () => {
 
 
 
-
-  const substr = (a, b) => {
-    return a - b
-  }
 
 
 

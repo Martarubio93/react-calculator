@@ -18,6 +18,11 @@ const Keypad = () => {
     setTotal(number1 + number2);
   };
 
+  const substr = () => {
+    setTotal(number1 - number2)
+  }
+
+
   const handleOperator = (ev) => {
     handleDisplayOperator(ev.currentTarget.value);
     checkOperator();
@@ -25,10 +30,11 @@ const Keypad = () => {
 
   const checkOperator = () => {
     displayOperator.forEach((item) => {
-      if (item === "=") {
+      if (item === "+") {
         add();
-      }
-    
+      }else if (item === "-"){
+        substr()
+      }   
     });
   };
 
