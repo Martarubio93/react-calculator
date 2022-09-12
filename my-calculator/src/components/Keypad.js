@@ -1,6 +1,5 @@
 import "../styles/layout/Keypad.scss";
 import OperatorsContext from "./OperatorsContext";
-import ButtonNumbers from "./ButtonNumbers";
 import ResetBtn from './ResetBtn';
 import React from "react";
 
@@ -12,6 +11,8 @@ const Keypad = () => {
     displayOperator,
     number1,
     number2,
+    setNumber1,
+    setNumber2,
     setTotal,
     displayTotal,
     setDisplayTotal,
@@ -63,11 +64,25 @@ const substr = () => {
     }
   }
 
+  const checkIf = (e) => {
+    if (displayOperator.length < 1) {
+      setNumber1([...number1, +e.currentTarget.value])
+  
+    }else setNumber2([...number2,+e.currentTarget.value ])
+  }
+
 
   return (
     <div className="container">
       {numbers.map((num, index) => {
-        return <ButtonNumbers key={index} num={num} />;
+        return  <input
+        className="container__btn"
+        type="text"
+        key={index}
+        value={num}
+        onClick={checkIf}
+        readOnly
+       />;
       })}
       {operators.map((oper) => {
         return (
@@ -76,6 +91,7 @@ const substr = () => {
             key={oper}
             value={oper}
             onClick={handleOperator}
+            readOnly
           />
         );
       })}

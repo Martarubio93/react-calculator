@@ -22,7 +22,7 @@ const Main = () => {
     }
   };
 
-console.log(total)
+
   return (
     <>
       <OperatorsContext.Provider
