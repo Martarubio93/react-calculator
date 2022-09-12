@@ -8,8 +8,7 @@ import { useState } from "react";
 
 const Main = () => {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  const operators = ["+", "-", "*", ".", "/", "="];
-  const [displayNumbers, setDisplayNumbers] = useState([]);
+  const operators = ["+", "-", "*", "/", "="];
   const [displayOperator, setDisplayOperator] = useState([]);
   const [number1, setNumber1] = useState([]);
   const [number2, setNumber2] = useState([]);
@@ -17,23 +16,20 @@ const Main = () => {
   const[displayTotal, setDisplayTotal] = useState(false);
 
 
-
- 
-
   const handleDisplayOperator = (value) => {
-    setDisplayOperator([...displayOperator, value]);
+    if (displayOperator < 1 ){
+      setDisplayOperator([...displayOperator, value]);
+    }
   };
 
-
+console.log(total)
   return (
     <>
       <OperatorsContext.Provider
         value={{
           numbers,
-          displayNumbers,
           displayOperator,
           operators,
-          setDisplayNumbers,
           setDisplayOperator,
           handleDisplayOperator,
           number1,
@@ -43,7 +39,7 @@ const Main = () => {
           total,
           setTotal,
           displayTotal,
-          setDisplayTotal
+          setDisplayTotal,
         }}
       >
         <Calculator />

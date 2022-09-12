@@ -1,12 +1,49 @@
-.screen{
-    width: 50%;
+@import '../core/Variables.scss';
+
+.screen {
+    width: 92%;
     min-height: 80px;
     padding: 12px;
     margin: 6px;
-    background-color: white;
+    background-color: black;
     border: solid 1px gray;
     text-align: center;
     font-weight: bolder;
-   
+    border-radius: 5%;
+
+    &__numbers {
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        color: orange;
+       
+
+    }
+
+    &__num {
+        max-width: 80px;
+        height: 50px;
+        text-align: center;
+        border: none;
+        outline: none;
+        font-size: 19px;
+        background-color: black;
+        color: orange;
+        font-family: $calculatorFont
+
+
+    }
+    &__result{
+        background-color: black;
+        color: orange;
+        font-family: $calculatorFont
+
+    }
 }
 
+.noHidden {
+   background-color: red;
+}
+
+.hidden {
+   display: none;}

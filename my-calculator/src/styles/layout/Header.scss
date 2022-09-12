@@ -1,3 +1,8 @@
+@import '../core/Variables.scss';
+
 .header{
     padding: 40px 0;
+    &__title{
+       color: #575757;
+    }
 }

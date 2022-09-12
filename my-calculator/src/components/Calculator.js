@@ -4,7 +4,7 @@ import '../styles/layout/Calculator.scss'
 //Components
 import Screen from "./Screen";
 import Keypad from "./Keypad";
-import ResetBtn from './ResetBtn';
+
 
 
 
@@ -14,7 +14,6 @@ const Calculator = () => {
     <div className="calculatorContainer">
       <Screen/>
       <Keypad/>
-      <ResetBtn/>
     </div>
   );
 };

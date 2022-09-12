@@ -3,7 +3,7 @@ import '../styles/layout/Footer.scss'
 const Footer = () => {
     return (
         <footer className="footer">
-            <small>Developed by Marta R.</small>
+            <small>Marta R.</small>
         </footer>
     )
 }

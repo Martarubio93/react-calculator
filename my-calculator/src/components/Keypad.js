@@ -1,6 +1,7 @@
 import "../styles/layout/Keypad.scss";
 import OperatorsContext from "./OperatorsContext";
 import ButtonNumbers from "./ButtonNumbers";
+import ResetBtn from './ResetBtn';
 import React from "react";
 
 const Keypad = () => {
@@ -13,7 +14,8 @@ const Keypad = () => {
     number2,
     setTotal,
     displayTotal,
-    setDisplayTotal
+    setDisplayTotal,
+
   } = React.useContext(OperatorsContext);
 
 
@@ -46,25 +48,21 @@ const substr = () => {
 }
 
 
-
   const handleOperator = (ev) => {
     handleDisplayOperator(ev.currentTarget.value);
     checkOperator();
   };
 
   const checkOperator = () => {
-    
-    displayOperator.forEach((item) => {
-      if (item === "+") {
-        add();
-      }else if (item === "-"){
-        substr()
-      }else if (item === "="){
-        setDisplayTotal(true)
+    if (displayOperator.includes("+")){
+      add()
+    }else if (displayOperator.includes("-")){
+      substr()
+    }else if (displayOperator.includes("=")){
+      setDisplayTotal(true)
+    }
+  }
 
-      }
-    });
-  };
 
   return (
     <div className="container">
@@ -81,7 +79,9 @@ const substr = () => {
           />
         );
       })}
+            <ResetBtn/>
     </div>
+    
   );
 };
 

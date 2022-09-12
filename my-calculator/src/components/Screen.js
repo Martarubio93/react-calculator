@@ -11,29 +11,19 @@ const Screen = () => {
     number2,
     total,
     displayTotal,
+    mostrarResult,
   } = useContext(OperatorsContext);
-
 
   return (
     <div className="screen">
-      <div className="screenNumbers">
-    
-          <input
-            type="text"
-            value={number1.join("")}
-          />
-          <input 
-          value={displayOperator.join("")}
-        />
-          <input
-            type="text"
-            value={number2.join("")}
-          />
-        <h2>{displayTotal ? total : ""}</h2>
+      <div className="screen__numbers">
+        <input className="screen__num" type="text" value={number1.join("")} />
+        <input className="screen__num" value={displayOperator.join("")} />
+        <input className="screen__num" type="text" value={number2.join("")} />
 
       </div>
- 
- 
+      {console.log(displayTotal)}
+      <h2 className="screen__result" > {total} </h2>
     </div>
   );
 };
