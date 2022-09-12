@@ -2,21 +2,19 @@ import OperatorsContext from "./OperatorsContext";
 import React from "react";
 
 const ButtonNumbers = (props) => {
-  const {handleDisplayNumber} =
+  const { setNumber1, setNumber2, number1} =
     React.useContext(OperatorsContext);
 
-  const handleNumber = (ev) => {
-    handleDisplayNumber(ev.currentTarget.value);
-  };
 
   return (
     <input
       className="container__btn"
-      type="button"
+      type="text"
       key={props.num}
       value={props.num}
-      onClick={handleNumber}
+      onClick={(e) => setNumber1([...number1, +e.currentTarget.value])}
     />
+ 
   );
 };
 

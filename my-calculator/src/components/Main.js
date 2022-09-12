@@ -11,16 +11,25 @@ const Main = () => {
   const operators = ["+", "-", "*", ".", "/", "="];
   const [displayNumbers, setDisplayNumbers] = useState([]);
   const [displayOperator, setDisplayOperator] = useState([]);
-  const [number1, setNumber1] = useState();
-  const [number2, setNumber2] = useState();
+  const [number1, setNumber1] = useState([]);
+  const [number2, setNumber2] = useState(0);
   const [total, setTotal] = useState();
 
+
   const handleDisplayNumber = (value) => {
-    setDisplayNumbers([...displayNumbers, value]);
+    setNumber1([...number1, value]);
   };
+
+ 
+
   const handleDisplayOperator = (value) => {
     setDisplayOperator([...displayOperator, value]);
   };
+
+
+
+
+
 
   return (
     <>

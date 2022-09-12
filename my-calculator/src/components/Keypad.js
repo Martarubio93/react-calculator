@@ -14,13 +14,25 @@ const Keypad = () => {
     setTotal,
   } = React.useContext(OperatorsContext);
 
-  const add = () => {
-    setTotal(number1 + number2);
-  };
 
-  const substr = () => {
-    setTotal(number1 - number2)
+const add = () => {
+  let newNumber = 0;
+for (let i=0; i<number1.length; i++){
+  let currentNumber = number1[i];
+  newNumber = (newNumber*10)+currentNumber;
+}
+ return setTotal(newNumber+number2)
+}
+
+const substr = () => {
+  let newNumber = 0;
+  for (let i=0; i<number1.length; i++){
+    let currentNumber = number1[i];
+    newNumber = (newNumber*10)+currentNumber;
   }
+   return setTotal(newNumber-number2)
+}
+
 
 
   const handleOperator = (ev) => {
@@ -34,7 +46,7 @@ const Keypad = () => {
         add();
       }else if (item === "-"){
         substr()
-      }   
+      }
     });
   };
 
