@@ -1,42 +1,39 @@
 import "../styles/layout/Screen.scss";
+import "../styles/core/Reset.scss";
 import React from "react";
 import OperatorsContext from "./OperatorsContext";
 import { useContext } from "react";
 
 const Screen = () => {
   const {
-    displayNumbers,
     displayOperator,
     number1,
-    setNumber1,
     number2,
-    setNumber2,
     total,
+    displayTotal,
   } = useContext(OperatorsContext);
 
 
   return (
     <div className="screen">
       <div className="screenNumbers">
-        <div>
+    
           <input
             type="text"
             value={number1.join("")}
           />
           <input 
-          value={displayOperator}
-          
+          value={displayOperator.join("")}
         />
           <input
-            type="number"
-            value={number2}
-            onChange={(e) => setNumber2(+e.target.value)}
+            type="text"
+            value={number2.join("")}
           />
-        </div>
+        <h2>{displayTotal ? total : ""}</h2>
 
       </div>
  
-      <h2>{total}</h2>
+ 
     </div>
   );
 };

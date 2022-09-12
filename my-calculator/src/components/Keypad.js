@@ -12,25 +12,37 @@ const Keypad = () => {
     number1,
     number2,
     setTotal,
+    displayTotal,
+    setDisplayTotal
   } = React.useContext(OperatorsContext);
 
 
 const add = () => {
-  let newNumber = 0;
+  let newNumber1 = 0;
+  let newNumber2= 0;
 for (let i=0; i<number1.length; i++){
-  let currentNumber = number1[i];
-  newNumber = (newNumber*10)+currentNumber;
+  let currentNumber1 = number1[i];
+  newNumber1 = (newNumber1*10)+currentNumber1;
 }
- return setTotal(newNumber+number2)
+for (let i=0; i<number2.length; i++){
+  let currentNumber2 = number2[i];
+  newNumber2 = (newNumber2*10)+currentNumber2;
+}
+ return setTotal(newNumber1+newNumber2)
 }
 
 const substr = () => {
-  let newNumber = 0;
+  let newNumber1 = 0;
+  let newNumber2= 0;
   for (let i=0; i<number1.length; i++){
-    let currentNumber = number1[i];
-    newNumber = (newNumber*10)+currentNumber;
+    let currentNumber1 = number1[i];
+    newNumber1 = (newNumber1*10)+currentNumber1;
   }
-   return setTotal(newNumber-number2)
+  for (let i=0; i<number2.length; i++){
+    let currentNumber2 = number2[i];
+    newNumber2 = (newNumber2*10)+currentNumber2;
+  }
+   return setTotal(newNumber1-newNumber2)
 }
 
 
@@ -41,11 +53,15 @@ const substr = () => {
   };
 
   const checkOperator = () => {
+    
     displayOperator.forEach((item) => {
       if (item === "+") {
         add();
       }else if (item === "-"){
         substr()
+      }else if (item === "="){
+        setDisplayTotal(true)
+
       }
     });
   };

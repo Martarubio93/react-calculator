@@ -12,23 +12,17 @@ const Main = () => {
   const [displayNumbers, setDisplayNumbers] = useState([]);
   const [displayOperator, setDisplayOperator] = useState([]);
   const [number1, setNumber1] = useState([]);
-  const [number2, setNumber2] = useState(0);
+  const [number2, setNumber2] = useState([]);
   const [total, setTotal] = useState();
+  const[displayTotal, setDisplayTotal] = useState(false);
 
 
-  const handleDisplayNumber = (value) => {
-    setNumber1([...number1, value]);
-  };
 
  
 
   const handleDisplayOperator = (value) => {
     setDisplayOperator([...displayOperator, value]);
   };
-
-
-
-
 
 
   return (
@@ -41,7 +35,6 @@ const Main = () => {
           operators,
           setDisplayNumbers,
           setDisplayOperator,
-          handleDisplayNumber,
           handleDisplayOperator,
           number1,
           setNumber1,
@@ -49,6 +42,8 @@ const Main = () => {
           setNumber2,
           total,
           setTotal,
+          displayTotal,
+          setDisplayTotal
         }}
       >
         <Calculator />
