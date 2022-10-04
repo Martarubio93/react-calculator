@@ -2,6 +2,7 @@ import "../styles/layout/Keypad.scss";
 import OperatorsContext from "./OperatorsContext";
 import ResetBtn from "./ResetBtn";
 import React from "react";
+import { act } from "react-dom/test-utils";
 
 const Keypad = () => {
   const {
@@ -17,80 +18,39 @@ const Keypad = () => {
     setDisplayTotal,
   } = React.useContext(OperatorsContext);
 
-  const add = () => {
-    let newNumber1 = 0;
-    let newNumber2 = 0;
-    for (let i = 0; i < number1.length; i++) {
-      let currentNumber1 = number1[i];
-      newNumber1 = newNumber1 * 10 + currentNumber1;
-    }
-    for (let i = 0; i < number2.length; i++) {
-      let currentNumber2 = number2[i];
-      newNumber2 = newNumber2 * 10 + currentNumber2;
-    }
+  
+
+const action = () => {
+  let newNumber1 = 0;
+  let newNumber2 = 0;
+  for (let i = 0; i < number1.length; i++) {
+    let currentNumber1 = number1[i];
+    newNumber1 = newNumber1 * 10 + currentNumber1;
+  }
+  for (let i = 0; i < number2.length; i++) {
+    let currentNumber2 = number2[i];
+    newNumber2 = newNumber2 * 10 + currentNumber2;
+  }
+  if (displayOperator.includes("+")) {
     return setTotal(newNumber1 + newNumber2);
-  };
-
-  const substr = () => {
-    let newNumber1 = 0;
-    let newNumber2 = 0;
-    for (let i = 0; i < number1.length; i++) {
-      let currentNumber1 = number1[i];
-      newNumber1 = newNumber1 * 10 + currentNumber1;
-    }
-    for (let i = 0; i < number2.length; i++) {
-      let currentNumber2 = number2[i];
-      newNumber2 = newNumber2 * 10 + currentNumber2;
-    }
+  } else if (displayOperator.includes("-")) {
     return setTotal(newNumber1 - newNumber2);
-  };
-
-  const mult = () => {
-    let newNumber1 = 0;
-    let newNumber2 = 0;
-    for (let i = 0; i < number1.length; i++) {
-      let currentNumber1 = number1[i];
-      newNumber1 = newNumber1 * 10 + currentNumber1;
-    }
-    for (let i = 0; i < number2.length; i++) {
-      let currentNumber2 = number2[i];
-      newNumber2 = newNumber2 * 10 + currentNumber2;
-    }
+  } else if (displayOperator.includes("*")) {
     return setTotal(newNumber1 * newNumber2);
-  };
+  } else if (displayOperator.includes("/")) {
+    return setTotal(newNumber1 / newNumber2); 
+  } else if (displayOperator.includes("=")) {
+    setDisplayTotal(true);
+  }
 
-  const div = () => {
-    let newNumber1 = 0;
-    let newNumber2 = 0;
-    for (let i = 0; i < number1.length; i++) {
-      let currentNumber1 = number1[i];
-      newNumber1 = newNumber1 * 10 + currentNumber1;
-    }
-    for (let i = 0; i < number2.length; i++) {
-      let currentNumber2 = number2[i];
-      newNumber2 = newNumber2 * 10 + currentNumber2;
-    }
-    return setTotal(newNumber1 / newNumber2);
-  };
-
+}
+ 
   const handleOperator = (ev) => {
     handleDisplayOperator(ev.currentTarget.value);
-    checkOperator();
+    action();
   };
 
-  const checkOperator = () => {
-    if (displayOperator.includes("+")) {
-      add();
-    } else if (displayOperator.includes("-")) {
-      substr();
-    } else if (displayOperator.includes("*")) {
-      mult();
-    } else if (displayOperator.includes("/")) {
-        div(); 
-    } else if (displayOperator.includes("=")) {
-      setDisplayTotal(true);
-    }
-  };
+
 
   const checkIf = (e) => {
     if (displayOperator.length < 1) {

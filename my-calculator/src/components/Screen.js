@@ -5,7 +5,7 @@ import OperatorsContext from "./OperatorsContext";
 import { useContext } from "react";
 
 const Screen = () => {
-  const { displayOperator, number1, number2, total } =
+  const { displayOperator, number1, setNumber1, number2, setNumber2, total } =
     useContext(OperatorsContext);
 
 
