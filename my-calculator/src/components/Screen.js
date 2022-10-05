@@ -11,7 +11,7 @@ const Screen = () => {
 
   return (
     <div className="screen">
-      <div className={`screen__numbrtd ${
+      <div className={`screen__numbers ${
           total ? "hidden" : ""
         }`} >
         <input

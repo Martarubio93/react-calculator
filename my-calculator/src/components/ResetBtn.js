@@ -17,8 +17,6 @@ const ResetBtn = () => {
     setDisplayOperator([]);
     setNumber1([]);
     setNumber2([]);
-
-
   };
 
   return <input className="resetBtn" type="reset" onClick={handleReset}></input>;
