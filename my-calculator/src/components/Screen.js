@@ -5,13 +5,15 @@ import OperatorsContext from "./OperatorsContext";
 import { useContext } from "react";
 
 const Screen = () => {
-  const { displayOperator, number1, setNumber1, number2, setNumber2, total } =
+  const { displayOperator, number1, number2, total } =
     useContext(OperatorsContext);
 
 
   return (
     <div className="screen">
-      <div className="screen__numbers">
+      <div className={`screen__numbrtd ${
+          total ? "hidden" : ""
+        }`} >
         <input
           className="screen__num"
           type="text"
@@ -20,6 +22,7 @@ const Screen = () => {
         />
         <input
           className="screen__num"
+          type="text"
           value={displayOperator.join("")}
           readOnly
         />

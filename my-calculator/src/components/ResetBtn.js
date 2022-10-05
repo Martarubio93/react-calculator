@@ -12,11 +12,13 @@ const ResetBtn = () => {
   } = useContext(OperatorsContext);
   
   const handleReset = () => {
+    setDisplayTotal(false);
+    setTotal(false);
     setDisplayOperator([]);
     setNumber1([]);
     setNumber2([]);
-    setTotal([]);
-    setDisplayTotal(false);
+
+
   };
 
   return <input className="resetBtn" type="reset" onClick={handleReset}></input>;

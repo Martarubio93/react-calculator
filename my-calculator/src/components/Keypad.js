@@ -2,7 +2,7 @@ import "../styles/layout/Keypad.scss";
 import OperatorsContext from "./OperatorsContext";
 import ResetBtn from "./ResetBtn";
 import React from "react";
-import { act } from "react-dom/test-utils";
+
 
 const Keypad = () => {
   const {
@@ -18,7 +18,6 @@ const Keypad = () => {
     setDisplayTotal,
   } = React.useContext(OperatorsContext);
 
-  
 
 const action = () => {
   let newNumber1 = 0;
@@ -42,14 +41,12 @@ const action = () => {
   } else if (displayOperator.includes("=")) {
     setDisplayTotal(true);
   }
-
 }
  
   const handleOperator = (ev) => {
     handleDisplayOperator(ev.currentTarget.value);
     action();
   };
-
 
 
   const checkIf = (e) => {
