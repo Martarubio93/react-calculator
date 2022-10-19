@@ -8,11 +8,10 @@ const ResetBtn = () => {
     setNumber1,
     setNumber2,
     setTotal,
-    setDisplayTotal,
+
   } = useContext(OperatorsContext);
   
   const handleReset = () => {
-    setDisplayTotal(false);
     setTotal(false);
     setDisplayOperator([]);
     setNumber1([]);

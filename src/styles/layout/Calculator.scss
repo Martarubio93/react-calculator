@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 281px;
+    max-width: 240px;
     background-color: $calculatorColor;
     padding: 50px 50px 50px 50px;
     border-radius: 10%;
@@ -12,6 +12,9 @@
     -moz-box-shadow: 14px 27px 13px 1px rgba(0,0,0,0.75);
     box-shadow: 14px 27px 13px 1px rgba(0,0,0,0.75);
     opacity: 0.7;
+    @media (min-width:768px){
+        max-width: 281px;
+    }
 
 
 }

@@ -36,7 +36,8 @@
         background-color: black;
         color: orange;
         font-size: 28px;
-        font-family: $calculatorFont
+        font-family: $calculatorFont;
+        overflow-wrap: break-word;
 
     }
 }

@@ -15,7 +15,6 @@ const Keypad = () => {
     setNumber1,
     setNumber2,
     setTotal,
-    setDisplayTotal,
   } = React.useContext(OperatorsContext);
 
 
@@ -38,9 +37,7 @@ const action = () => {
     return setTotal(newNumber1 * newNumber2);
   } else if (displayOperator.includes("/")) {
     return setTotal(newNumber1 / newNumber2); 
-  } else if (displayOperator.includes("=")) {
-    setDisplayTotal(true);
-  }
+  } 
 }
  
   const handleOperator = (ev) => {
@@ -50,9 +47,11 @@ const action = () => {
 
 
   const checkIf = (e) => {
-    if (displayOperator.length < 1) {
+    if (displayOperator.length < 1 && number1.length < 10) {
       setNumber1([...number1, +e.currentTarget.value]);
-    } else setNumber2([...number2, +e.currentTarget.value]);
+    } else if (displayOperator.length === 1 && number2.length < 10){
+      setNumber2([...number2, +e.currentTarget.value]);
+    } 
   };
 
   return (
@@ -69,11 +68,11 @@ const action = () => {
           />
         );
       })}
-      {operators.map((oper) => {
+      {operators.map((oper, index) => {
         return (
           <input
             className="container__btn"
-            key={oper}
+            key={index}
             value={oper}
             onClick={handleOperator}
             readOnly
