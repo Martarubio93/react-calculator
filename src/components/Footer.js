@@ -1,12 +1,11 @@
 //Styles
-import '../styles/layout/Footer.scss'
+import "../styles/layout/Footer.scss";
 const Footer = () => {
-    return (
-        <footer className="footer">
-            <small>Marta R.</small>
-        </footer>
-    )
-}
+  return (
+    <footer className="footer">
+      <small>Marta R.</small>
+    </footer>
+  );
+};
 
-
-export default Footer
+export default Footer;

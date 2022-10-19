@@ -1,16 +1,11 @@
 import OperatorsContext from "./OperatorsContext";
-import '../styles/layout/ResetBtn.scss';
+import "../styles/layout/ResetBtn.scss";
 import { useContext } from "react";
 
 const ResetBtn = () => {
-  const {
-    setDisplayOperator,
-    setNumber1,
-    setNumber2,
-    setTotal,
+  const { setDisplayOperator, setNumber1, setNumber2, setTotal } =
+    useContext(OperatorsContext);
 
-  } = useContext(OperatorsContext);
-  
   const handleReset = () => {
     setTotal(false);
     setDisplayOperator([]);
@@ -18,7 +13,9 @@ const ResetBtn = () => {
     setNumber2([]);
   };
 
-  return <input className="resetBtn" type="reset" onClick={handleReset}></input>;
+  return (
+    <input className="resetBtn" type="reset" onClick={handleReset}></input>
+  );
 };
 
 export default ResetBtn;

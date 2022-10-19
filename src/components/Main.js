@@ -15,12 +15,9 @@ const Main = () => {
   const [number2, setNumber2] = useState([]);
   const [total, setTotal] = useState();
 
-
   const handleDisplayOperator = (value) => {
-      setDisplayOperator([value]);
-    
+    setDisplayOperator([value]);
   };
-
 
   return (
     <>
