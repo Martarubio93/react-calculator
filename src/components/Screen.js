@@ -7,7 +7,6 @@ import { useContext } from "react";
 const Screen = () => {
   const { displayOperator, number1, number2, total } =
     useContext(OperatorsContext);
- 
 
   return (
     <div className="screen">
@@ -31,7 +30,13 @@ const Screen = () => {
           readOnly
         />
       </div>
-      <h2 className="screen__result">{total}</h2>
+      <h2
+        className={`screen__result ${
+          displayOperator.includes("=") ? "" : "hidden"
+        }`}
+      >
+        {total}
+      </h2>
     </div>
   );
 };
