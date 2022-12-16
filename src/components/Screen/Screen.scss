@@ -1,4 +1,4 @@
-@import '../core/Variables.scss';
+@import '../../styles/core/Variables.scss';
 
 .screen {
     width: 92%;
@@ -42,9 +42,6 @@
     }
 }
 
-.noHidden {
-   background-color: red;
-}
 
 .hidden {
    display: none;}

@@ -1,9 +1,8 @@
 //Styles
-import "../styles/layout/Main.scss";
-import "./Calculator";
+import './Main.scss';
 //Components
-import Calculator from "./Calculator";
-import OperatorsContext from "./OperatorsContext";
+import Calculator from "../Calculator/Calculator";
+import OperatorsContext from "../OperatorsContext";
 //Hooks
 import { useState } from "react";
 

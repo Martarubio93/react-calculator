@@ -1,5 +1,5 @@
-import OperatorsContext from "./OperatorsContext";
-import "../styles/layout/ResetBtn.scss";
+import OperatorsContext from '../OperatorsContext';
+import './ResetBtn.scss';
 import { useContext } from "react";
 
 const ResetBtn = () => {

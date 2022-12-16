@@ -1,7 +1,7 @@
-import "../styles/layout/Screen.scss";
-import "../styles/core/Reset.scss";
+import "./Screen.scss";
+import '../../styles/core/Reset.scss';
 import React from "react";
-import OperatorsContext from "./OperatorsContext";
+import OperatorsContext from "../OperatorsContext";
 import { useContext } from "react";
 
 const Screen = () => {

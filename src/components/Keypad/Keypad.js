@@ -1,6 +1,6 @@
-import "../styles/layout/Keypad.scss";
-import OperatorsContext from "./OperatorsContext";
-import ResetBtn from "./ResetBtn";
+import './Keypad.scss';
+import OperatorsContext from '../OperatorsContext';
+import ResetBtn from '../ResetBtn/ResetBtn';
 import React from "react";
 
 const Keypad = () => {

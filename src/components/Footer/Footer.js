@@ -1,5 +1,5 @@
 //Styles
-import "../styles/layout/Footer.scss";
+
 const Footer = () => {
   return (
     <footer className="footer">
