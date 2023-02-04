@@ -36,6 +36,7 @@ const Keypad = () => {
     } else if (displayOperator.includes("/")) {
       return setTotal(newNumber1 / newNumber2);
     }
+    
   };
 
   const handleOperator = (ev) => {

@@ -1,16 +1,44 @@
 import "./Screen.scss";
-import '../../styles/core/Reset.scss';
+import "../../styles/core/Reset.scss";
 import React from "react";
 import OperatorsContext from "../OperatorsContext";
 import { useContext } from "react";
 
 const Screen = () => {
-  const { displayOperator, number1, number2, total } =
-    useContext(OperatorsContext);
+  const {
+    displayOperator,
+    setDisplayOperator,
+    number1,
+    setNumber1,
+    number2,
+    setNumber2,
+    total,
+    saveTheNumber,
+    setSaveTheNumber,
+    setSaveTheOperator,
+  } = useContext(OperatorsContext);
+  const regex = /\d+/;
 
+ /*const removeOperator = () => {
+  setSaveTheNumber(total)
+  if (displayOperator.includes("=")){
+      setDisplayOperator([]);
+      setNumber1([total])
+      setNumber2([])
+
+  }else {
+      setNumber1([total])
+      setNumber2([])
+
+  }
+  };*/
+
+  /*        {regex.test(total) && removeOperator()} */
+
+  
   return (
     <div className="screen">
-      <div className={`screen__numbers ${total ? "hidden" : ""}`}>
+      <div className={`screen__numbers ${total || total === 0 ? "hidden" : ""}`}>
         <input
           className="screen__num"
           type="text"
@@ -31,11 +59,11 @@ const Screen = () => {
         />
       </div>
       <h2
-        className={`screen__result ${
-          displayOperator.includes("=") ? "" : "hidden"
-        }`}
-      >
+        className="screen__result">
         {total}
+
+
+
       </h2>
     </div>
   );

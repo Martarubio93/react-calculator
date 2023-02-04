@@ -13,6 +13,8 @@ const Main = () => {
   const [number1, setNumber1] = useState([]);
   const [number2, setNumber2] = useState([]);
   const [total, setTotal] = useState();
+  const [saveTheNumber, setSaveTheNumber] = useState([]);
+  const [saveTheOperator, setSaveTheOperator] = useState([])
 
   const handleDisplayOperator = (value) => {
     setDisplayOperator([value]);
@@ -20,6 +22,8 @@ const Main = () => {
 
   return (
     <>
+
+    
       <OperatorsContext.Provider
         value={{
           numbers,
@@ -33,6 +37,12 @@ const Main = () => {
           setNumber2,
           total,
           setTotal,
+          saveTheNumber,
+          setSaveTheNumber,
+          saveTheOperator,
+          setSaveTheOperator,
+
+
         }}
       >
         <Calculator />
