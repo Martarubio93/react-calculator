@@ -19,7 +19,10 @@ const Main = () => {
   const handleDisplayOperator = (value) => {
     setDisplayOperator([value]);
   };
-
+  const handleDisplayOperatorRepeat = (value) => {
+    console.log('hello', displayOperator)
+    setDisplayOperator([...displayOperator, value ])
+  }
   return (
     <>
 
@@ -31,6 +34,7 @@ const Main = () => {
           operators,
           setDisplayOperator,
           handleDisplayOperator,
+          handleDisplayOperatorRepeat,
           number1,
           setNumber1,
           number2,

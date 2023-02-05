@@ -1,19 +1,25 @@
-import './Keypad.scss';
-import OperatorsContext from '../OperatorsContext';
-import ResetBtn from '../ResetBtn/ResetBtn';
+import "./Keypad.scss";
+import OperatorsContext from "../OperatorsContext";
+import ResetBtn from "../ResetBtn/ResetBtn";
 import React from "react";
 
 const Keypad = () => {
+  
   const {
     numbers,
     operators,
     handleDisplayOperator,
+    handleDisplayOperatorRepeat,
     displayOperator,
+    saveTheNumber,
+    setSaveTheNumber,
+    setDisplayOperator,
     number1,
     number2,
     setNumber1,
     setNumber2,
     setTotal,
+    total
   } = React.useContext(OperatorsContext);
 
   const action = () => {
@@ -36,13 +42,14 @@ const Keypad = () => {
     } else if (displayOperator.includes("/")) {
       return setTotal(newNumber1 / newNumber2);
     }
-    
   };
 
   const handleOperator = (ev) => {
-    handleDisplayOperator(ev.currentTarget.value);
-    action();
-  };
+
+      handleDisplayOperator(ev.currentTarget.value);
+      action();
+    }
+
 
   const checkIf = (e) => {
     if (displayOperator.length < 1 && number1.length < 10) {
